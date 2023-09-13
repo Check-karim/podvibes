@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PODVIBES CREATOR DASHBOARD</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+   
+    <link href="img/logo.png" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <!--div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div-->
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="../episodes.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary">PODVIBES</h3>
+                </a>
+         
+                <div class="navbar-nav w-100">
+                    <a href="useracc.html" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>My Account</a>
+
+                    
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4" action="" method="post">
+                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                   
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notification</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="img/kl.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">Ntwali hurricane</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="useracc.html" class="dropdown-item">My account</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="../podvibes.html" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End   -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    
+                    
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Episode Input Info</h6>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">episode title</label>
+                            </div>
+                        
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="floatingSelect"
+                                    aria-label="Floating label select example">
+                                    <option selected>silver</option>
+                                    <option value="1">gold</option>
+                                    <option value="2">classic</option>
+                                    <option value="3">premium</option>
+                                </select>
+                                <label for="floatingSelect">Works with selects</label>
+                            </div>
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here"
+                                    id="floatingTextarea" style="height: 150px;"></textarea>
+                                <label for="floatingTextarea">description</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Upload</h6>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">upload episode</label>
+                                <input class="form-control bg-dark" type="file" id="formFile">
+                            </div>
+                            <div>
+                                <a href="rec.html"><button class="btn btn-primary w-100 m-2" type="button">Record</button></a>
+                                <a href="#"><button class="btn btn-primary w-100 m-2" type="button">PUBLISH</button></a>
+                        
+                            </div> 
+                        </div>   
+                    </div>                   
+                </div>
+            </div>
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    
+                    
+
+                    <div class="container-fluid pt-4 px-4">
+                        <div class="row g-4">
+                            <div class="col-sm-12 col-md-6 col-lg-8">
+                                <div class="h-100 bg-secondary rounded p-4">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <h6 class="mb-0">My episodes</h6>
+                                        <a href="">Show All</a>
+                                    </div>
+                                    <div class="d-flex align-items-center border-bottom py-3">
+                                        <img class="rounded-circle flex-shrink-0" src="../assets/images/f1.png" alt="" style="width: 40px; height: 40px;">
+                                        <div class="w-100 ms-3">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-0">THE PINNACLE OF MOTORSPORT</h6>
+                                                <small>15 minutes ago</small>
+                                            </div>
+                                            <span>Episodes Description</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center border-bottom py-3">
+                                        <img class="rounded-circle flex-shrink-0" src="../assets/images/rose.jpeg" alt="" style="width: 40px; height: 40px;">
+                                        <div class="w-100 ms-3">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-0">THE IDIOTS RESPONSIBLE FOR KRYPTON FALL</h6>
+                                                <small>15 minutes ago</small>
+                                            </div>
+                                            <span>Episode Description...</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center border-bottom py-3">
+                                        <img class="rounded-circle flex-shrink-0" src="../assets/images/ariane.jpg" alt="" style="width: 40px; height: 40px;">
+                                        <div class="w-100 ms-3">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-0">FLOWERS FOR BRILLIANT MINDS</h6>
+                                                <small>15 minutes ago</small>
+                                            </div>
+                                            <span>Episode Description...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Widget Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">account info</h6>
+                            <div class="owl-carousel testimonial-carousel">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid rounded-circle mx-auto mb-4" src="img/kl.jpg" style="width: 100px; height: 100px;">
+                                    <h5 class="mb-1">Wizzy</h5>
+                                    <p>Creator / Producer</p>
+                                    <p class="mb-0">Great episode. highly recommend </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-xl-6">
+                                <div class="bg-secondary rounded h-100 p-4">
+                                    <h6 class="mb-4">account Manager</h6>
+                                    <div class="m-n2">
+                                        <a href="../episodes.html"><button class="btn btn-primary w-100 m-2" type="button">PLAY EPISODES</button></a>
+                                        <a href="../membership.html"><button class="btn btn-primary w-100 m-2" type="button">MY SUBSCRIPTION</button></a>
+                                       
+                                       
+                                    </div>
+                                </div>
+                            </div> 
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">change password</h6>
+                            <form>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">confirm Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3">
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <legend class="col-form-label col-sm-2 pt-0"></legend>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <label class="form-check-label" for="gridCheck1">
+                                                accept terms and conditions
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">UPDATE</button><br>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">over view</h6>
+                            <div class="border rounded p-4 pb-0 mb-4">
+                                <figure>
+                                    <blockquote class="blockquote">
+                                        <p>subscription package.</p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer">
+                                       GOLD, end date 2023-AUG
+                                    </figcaption>
+                                    <a href="../membership.html">UPGRADE YOUR  SUBSCRIPTION PACKAGE</a>
+
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    
+                </div>
+                
+            </div>
+           
+            
+            <!-- Widget End -->
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">Podvibes</a>, All Right Reserved. 
+                        </div>
+                        <div class="col-12 col-sm-6 text-center text-sm-end">
+                        
+                            Designed By <a href="">ARIANE Umurerwa</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    
+    
+    <!--payment section-->
+
+            
+    <div id="id01" class="modal"> 
+    <div class="container">
+    
+        <div class="card-container">
+    
+            <div class="front">
+                <div class="image">
+                    <img src="img/chip.png" alt="">
+                    <img src="img/visa.png" alt="">
+                </div>
+                <div class="card-number-box">################</div>
+                <div class="flexbox">
+                    <div class="box">
+                        <span>card holder</span>
+                        <div class="card-holder-name">full name</div>
+                    </div>
+                    <div class="box">
+                        <span>expires</span>
+                        <div class="expiration">
+                            <span class="exp-month">mm</span>
+                            <span class="exp-year">yy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="back">
+                <div class="stripe"></div>
+                <div class="box">
+                    <span>cvv</span>
+                    <div class="cvv-box"></div>
+                    <img src="image/visa.png" alt="">
+                </div>
+            </div>
+    
+        </div>
+    
+        <form action="">
+            <div class="inputBox">
+                <span>card number</span>
+                <input type="text" maxlength="16" class="card-number-input">
+            </div>
+            <div class="inputBox">
+                <span>card holder</span>
+                <input type="text" class="card-holder-input">
+            </div>
+            <div class="flexbox">
+                <div class="inputBox">
+                    <span>expiration mm</span>
+                    <select name="" id="" class="month-input">
+                        <option value="month" selected disabled>month</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>expiration yy</span>
+                    <select name="" id="" class="year-input">
+                        <option value="year" selected disabled>year</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>cvv</span>
+                    <input type="text" maxlength="4" class="cvv-input">
+                </div>
+            </div>
+            <input type="submit" value="submit" class="submit-btn">
+        </form>
+    
+    </div>   
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="js/main.js"></script>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+        document.querySelector('.card-number-input').oninput = () =>{
+            document.querySelector('.card-number-box').innerText = document.querySelector('.card-number-input').value;
+        }
+        
+        document.querySelector('.card-holder-input').oninput = () =>{
+            document.querySelector('.card-holder-name').innerText = document.querySelector('.card-holder-input').value;
+        }
+        
+        document.querySelector('.month-input').oninput = () =>{
+            document.querySelector('.exp-month').innerText = document.querySelector('.month-input').value;
+        }
+        
+        document.querySelector('.year-input').oninput = () =>{
+            document.querySelector('.exp-year').innerText = document.querySelector('.year-input').value;
+        }
+        
+        document.querySelector('.cvv-input').onmouseenter = () =>{
+            document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(-180deg)';
+            document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(0deg)';
+        }
+        
+        document.querySelector('.cvv-input').onmouseleave = () =>{
+            document.querySelector('.front').style.transform = 'perspective(1000px) rotateY(0deg)';
+            document.querySelector('.back').style.transform = 'perspective(1000px) rotateY(180deg)';
+        }
+        
+        document.querySelector('.cvv-input').oninput = () =>{
+            document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
+        }
+    </script>
+
+
+</body>
+
+</html>

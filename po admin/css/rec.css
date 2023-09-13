@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, 'Times New Roman';
+    background: black;
+    width: 100%;
+    background-size: cover;
+ 
+    background-repeat: no-repeat;
+
+}
+
+header {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+h1 {
+
+    font-family: Cambria, 'Times New Roman';
+    color: white;
+    text-transform: uppercase;
+    font-size: 43px;
+    font-weight: 900;
+    letter-spacing: 0.1cm;
+    word-spacing: 25px;
+    text-shadow: 5px 5px 10px white;
+}
+h2 {
+    font-size: 24px;
+    font-style: italic;
+    color: white;
+    font-weight: 600;
+    position: fixed;
+    word-spacing: 0.1cm;
+    letter-spacing: 0.1cm;
+  
+}
+
+.console {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.div-audio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-audio audio {
+    margin: 10px auto;
+}
+
+.stopwatch {
+    min-height: 40px;
+    color: #ffffff;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin: 5px 10px;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+    color: aliceblue;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button.rec {
+    font-family: Cambria, 'Times New Roman';
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color:#ff3333;
+    padding: 14px 25px;
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: 10px;
+    justify-content: space-between;
+    margin: 0 5px;
+    margin-top: 4%;
+    font-weight: 600;
+
+    
+}
+
+button.stop {
+
+    font-family: Cambria, 'Times New Roman';
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color:#ff3333;
+    padding: 14px 25px;
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: 10px;
+    justify-content: space-between;
+    margin: 0 5px;
+    margin-top: 4%;
+    font-weight: 600;
+}
+
+audio {
+    outline: none;
+    width: 300px;
+    height: 30px;
+    opacity: 1;
+    transition: opacity 3s ease-in-out;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: rgb(77, 0, 0);
+    border-radius: 50%;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #313131;
+    color: #ffffff;
+}
+
+audio::-webkit-media-controls-overlay-enclosure {
+    display: none;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #ffffff;
+}
+
+
+
+.div-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 500px; 
+}
+
+.devices-status {
+    position: absolute;
+    bottom: 3%;
+    min-height: 13px;
+    padding: 8px;
+    color: #ffffff;
+    background: black;
+    box-shadow: 4px 4px 8px rgb(77, 0, 0), -4px -4px 8px rgb(77, 0, 0);
+    opacity: 1;
+    visibility: visible;
+ 
+}
+
+.devices-status.hide {
+    opacity: 0;
+    visibility: hidden;
+    min-height: 0px;
+}
+
+.scale {
+    animation: scale 3s linear infinite;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+}

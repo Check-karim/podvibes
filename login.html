@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/login.css">
+    <title>PODVIBES sign-up</title>
+</head>
+
+<body style="background-image: url(assets/images/w14.jpg);">
+    <div class="container">
+        <div class="signin-sign-up">
+
+            <form id="loginForm" class="sign-in-form">
+                <h2 class="title">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="username" id="username" required >
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="password" required>
+                </div>
+                
+                <a href="#" class="forgot-password">Forgot password</a>
+                <br>
+                <p>Don't have an account? <a href="#" class="account-text" id="sign-up-link">Sign up</a></p>
+                <input type="submit" value="login " class="btn">       
+            </form>
+
+            <form id="createAccountForm" action="register.php" class="sign-up-form" method="post" >
+                <h2 class="title">Sign up</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" id="username" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="@email" id="email" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="password" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="confirm password" id="confirmPassword" required>
+                </div>
+
+                <div class="gender-details-box">
+                    <span class="gender-title">Gender</span>
+                    <div class="gender-category">
+                      <input type="radio" name="gender" id="male">
+                      <label for="male">Male</label>
+                      <input type="radio" name="gender" id="female">
+                      <label for="female">Female</label>
+                      <input type="radio" name="gender" id="other">
+                      <label for="other">Other</label>
+                    </div>
+                </div>
+
+                <p>Already have an account? <a href="#" class="account-text" id="sign-in-link">Sign in</a></p>
+                <input type="submit" value="Sign up" class="btn">   
+               
+            </form>
+          
+        </div>
+    </div>
+    <script src="assets/javascript/login.js"></script>
+
+    <!----------------------------------------------------------------------------
+    PLEASE DON'T EDIT  THESE SCRIPTS WITHOUT UPDATING MYSQL-----------------------
+    ----------------------------------------------------------------------------->
+    <script>
+        //  update production DB
+        const validCredentials = [
+            { username: 'Ariane', password: '123' },
+            { username: 'Nesta', password: '12345' },
+            { username: 'germain', password: '12345' },
+        ];
+
+        document.getElementById('loginForm').onsubmit = function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const validCredential = validCredentials.find(cred => 
+               cred.username === username && cred.password === password
+            );
+
+            if (validCredential) {
+                window.location.href = 'episodes.html';
+            } else {
+                alert('PODVIBES\ninvalid credentials. Try again');
+            }
+            return false;
+            
+        };
+
+        function createAccount() {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) {
+                alert ('input correct password.');
+                return false; 
+            }
+            alert('Account created successfully!'); 
+            return false;
+        }
+        document.getElementById('createAccountForm').onsubmit = createAccount;
+    </script>
+
+</body>
+</html>
