@@ -13,9 +13,9 @@
 			<li class="nav-item">
 				<a class="nav-link <?php $_GET['page_state'] == 'add-episode' ? print 'active' : '' ;?>" aria-current="page" href="./index.php?page_state=add-episode">ADD EPISODE</a>
 			</li>
-			<!-- <li class="nav-item">
-				<a class="nav-link <?php $_GET['page_state'] == 'About' ? print 'active' : '' ;?>" href="./about.php?page_state=About">ABOUT</a>
-			</li> -->
+			<li class="nav-item">
+				<a class="nav-link <?php $_GET['page_state'] == 'tracks' ? print 'active' : '' ;?>" href="./tracks.php?page_state=tracks">TRACKS</a>
+			</li>
 			<!-- <li class="nav-item">
 				<a class="nav-link <?php $_GET['page_state'] == 'Upload' ? print 'active' : '' ;?>"" href="./logincreator.php?page_state=Upload">UPLOAD</a>
 			</li> -->

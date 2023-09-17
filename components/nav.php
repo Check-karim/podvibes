@@ -30,7 +30,7 @@
 				<a class="nav-link <?php $page_state == 'Upload' ? print 'active' : '' ;?>" href="./logincreator.php?page_state=Upload"><?php !$username ?  print("UPLOAD") : print("CREATOR"); ?></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link <?php $page_state == 'Login' ? print 'active' : '' ;?>" href="./login.php?page_state=Login">FOR YOU</a>
+				<a class="nav-link <?php $page_state == 'Listen' ? print 'active' : '' ;?>" href="./login.php?page_state=Listen">LISTEN NOW</a>
 			</li>
 		</ul>
 		</div>

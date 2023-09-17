@@ -43,7 +43,7 @@
                         <div class="mb-3">
                             <h4 class='home-text'>Upload Episode</h4>
                             <div>
-                                <input class="form-control form-control-lg" id="ep_audio" type="file">
+                                <input class="form-control form-control-lg" name='ep_track' id="ep_track" type="file">
                             </div>
                         </div>
                         <div class="d-grid gap-2">
@@ -62,25 +62,34 @@
         $ep_description = $_POST['ep_description'];
 
         $ep_cover = rand(1000,10000)."_".str_replace(' ','_',$_FILES['ep_cover']['name']);
-        $tname = $_FILES['ep_cover']['tmp_name'];
+        $ep_track = rand(1000,10000)."_".str_replace(' ','_',$_FILES['ep_track']['name']);
+        
+        $tname_cover = $_FILES['ep_cover']['tmp_name'];
+        $tname_track = $_FILES['ep_track']['tmp_name'];
 
         $username = $_COOKIE['creator_username'];
-        $upload_dir = "public/assets";
-        // $upload_dir = "public/assets/".str_replace(' ','_',$username);
+
+        $upload_dir_cover = "public/assets/cover";
+        $upload_dir_track = "public/assets/tracks";
 
         $root_dir = __DIR__;
-        move_uploaded_file($tname, $root_dir.'/'.$upload_dir."/".$ep_cover);
 
-        $sql = "INSERT INTO episode (TITLE,DESCRIPTION,MEMBERSHIP,COVER) ";
-        $sql .= "VALUES('".$ep_title."','".$ep_description."','".$ep_membership."','".$ep_cover."' ) ";
+            // for cover
+            move_uploaded_file($tname_cover, $root_dir.'/'.$upload_dir_cover."/".$ep_cover);
+            // for track
+            move_uploaded_file($tname_track, $root_dir.'/'.$upload_dir_track."/".$ep_track);
+       
+        $sql = "INSERT INTO episode (USER,TITLE,DESCRIPTION,MEMBERSHIP,COVER,TRACK) ";
+        $sql .= "VALUES('".$username."','".$ep_title."','".$ep_description."','".$ep_membership."','".$ep_cover."','".$ep_track."' ) ";
         
-        if(mysqli_query($conn, $sql)){
+        $result = mysqli_query($conn, $sql);
+
+        if($result){
             echo '<script>alert("Uploaded")</script>';
         }else{
-            echo '<script>alert("Not Uploaded")</script>';
+            echo '<script>alert("Not Uploaded '.$conn->error.'")</script>';
         }
 
-        var_dump($_FILES['ep_cover']['tmp_name']);
     }
 ?>
 <?php require ('./components/footer.php'); ?>
