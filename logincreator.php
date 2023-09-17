@@ -3,7 +3,7 @@
 <?php include_once('./DB/db.php');?>
 <?php 
 if(isset($_COOKIE['creator_username'])){
-    header("Location: ./creator/index.php");
+    header("Location: ./creator/index.php?page_state=add-episode");
 }
 ?>
 	<div class="container-fluid home-container">

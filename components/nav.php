@@ -17,16 +17,16 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
 			<li class="nav-item">
-				<a class="nav-link <?php $_GET['page_state'] == '' ? print 'active' : '' ;?>" aria-current="page" href="./">HOME</a>
+				<a class="nav-link <?php isset($_GET['page_state']) == '' ? print 'active' : '' ;?>" aria-current="page" href="./">HOME</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link <?php $_GET['page_state'] == 'About' ? print 'active' : '' ;?>" href="./about.php?page_state=About">ABOUT</a>
+				<a class="nav-link <?php isset($_GET['page_state']) == 'About' ? print 'active' : '' ;?>" href="./about.php?page_state=About">ABOUT</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link <?php $_GET['page_state'] == 'Upload' ? print 'active' : '' ;?>"" href="./logincreator.php?page_state=Upload"><?php !$username ?  print("UPLOAD") : print("CREATOR DASHBOARD"); ?></a>
+				<a class="nav-link <?php isset($_GET['page_state']) == 'Upload' ? print 'active' : '' ;?>"" href="./logincreator.php?page_state=Upload"><?php !$username ?  print("UPLOAD") : print("CREATOR"); ?></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link <?php $_GET['page_state'] == 'Login' ? print 'active' : '' ;?>"" href="./login.php?page_state=Login">FOR YOU</a>
+				<a class="nav-link <?php isset($_GET['page_state']) == 'Login' ? print 'active' : '' ;?>"" href="./login.php?page_state=Login">FOR YOU</a>
 			</li>
 		</ul>
 		</div>
