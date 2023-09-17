@@ -5,6 +5,10 @@
 	if(isset($_COOKIE['creator_username'])){
 		$username = $_COOKIE['creator_username'];
 	}
+	$page_state = '';
+	if(isset($_GET['page_state'])){
+		$page_state = $_GET['page_state'];
+	}
 ?>
 <nav class="navbar origin-navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
 	<div class="container-fluid">
@@ -17,16 +21,16 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
 			<li class="nav-item">
-				<a class="nav-link <?php isset($_GET['page_state']) == '' ? print 'active' : '' ;?>" aria-current="page" href="./">HOME</a>
+				<a class="nav-link <?php $page_state == '' ? print 'active' : '' ;?>" aria-current="page" href="./">HOME</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link <?php isset($_GET['page_state']) == 'About' ? print 'active' : '' ;?>" href="./about.php?page_state=About">ABOUT</a>
+				<a class="nav-link <?php $page_state == 'About' ? print 'active' : '' ;?>" href="./about.php?page_state=About">ABOUT</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link <?php isset($_GET['page_state']) == 'Upload' ? print 'active' : '' ;?>" href="./logincreator.php?page_state=Upload"><?php !$username ?  print("UPLOAD") : print("CREATOR"); ?></a>
+				<a class="nav-link <?php $page_state == 'Upload' ? print 'active' : '' ;?>" href="./logincreator.php?page_state=Upload"><?php !$username ?  print("UPLOAD") : print("CREATOR"); ?></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link <?php isset($_GET['page_state']) == 'Login' ? print 'active' : '' ;?>" href="./login.php?page_state=Login">FOR YOU</a>
+				<a class="nav-link <?php $page_state == 'Login' ? print 'active' : '' ;?>" href="./login.php?page_state=Login">FOR YOU</a>
 			</li>
 		</ul>
 		</div>
