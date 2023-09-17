@@ -3,7 +3,7 @@
 	session_start();
 	$username = NULL;
 	if(isset($_COOKIE['creator_username'])){
-		$username = $_SESSION['creator_username'];
+		$username = $_COOKIE['creator_username'];
 	}
 ?>
 <nav class="navbar origin-navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
