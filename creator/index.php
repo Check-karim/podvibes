@@ -1,4 +1,6 @@
-<?php require ('./components/header.php') ?>
+<?php 
+$body= 'div-block';
+require ('./components/header.php'); ?>
 <?php require ('./components/nav.php') ?>
 <?php require ('./DB/db.php');
     $ep_title = '';
@@ -20,51 +22,51 @@
    
 ?>
 <div class="container-fluid home-container">
-	<div class="row justify-content-center col-gray">
-		<div class="col-md-12">
-        <form method="post" enctype='multipart/form-data'>
-            <div class="row" >
-                <div class="col-md p-5">
-                    <h4 class='home-text'>Episode Input Info</h4>
-                        <div class="mb-3">
-                            <div class="form-floating mb-3">
-                                <input type="text" value='<?php echo $ep_title ?>' name='ep_title' class="form-control color-red" id="ep_title" placeholder="name@example.com">
-                                <label for="ep_title">Episode Title</label>
+	<div class="row justify-content-around col-gray">
+		<div class="col-md-6">
+            <form method="post" enctype='multipart/form-data'>
+                <div class="row" >
+                    <div class="col-md p-5">
+                        <h4 class='home-text'>Episode Input Info</h4>
+                            <div class="mb-3" style='color: black;'>
+                                <div class="form-floating mb-3">
+                                    <input type="text" value='<?php echo $ep_title ?>' name='ep_title' class="form-control color-red" id="ep_title" placeholder="name@example.com">
+                                    <label for="ep_title">Episode Title</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="mb-3">
-                            <h4 class='home-text'>Upload Cover</h4>
-                            <div>
-                                <input class="form-control form-control-lg" name="ep_cover" id="ep_cover" type="file">
+                            <div class="mb-3">
+                                <h4 class='home-text'>Upload Cover</h4>
+                                <div>
+                                    <input class="form-control form-control-lg" name="ep_cover" id="ep_cover" type="file">
+                                </div>
+                                <div id="selectedBanner"></div>
                             </div>
-                            <div id="selectedBanner"></div>
-                        </div>
-                        <div class="mb-3">
-                            <h4 class='home-text'>Upload Episode</h4>
-                            <div>
-                                <input class="form-control form-control-lg" name='ep_track' id="ep_track" type="file">
+                            <div class="mb-3">
+                                <h4 class='home-text'>Upload Episode</h4>
+                                <div>
+                                    <input class="form-control form-control-lg" name='ep_track' id="ep_track" type="file">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="d-grid gap-2">
-                            <?php
-                                if(isset($_GET['action'])){
-                                    if($_GET['action'] == 'update_episode'){
+                            <div class="text-center">
+                                <?php
+                                    if(isset($_GET['action'])){
+                                        if($_GET['action'] == 'update_episode'){
+                                            ?>
+                                                <button id='update_ep' name='update_ep' class='btn btn-large btn-danger' type="submit">UPDATE</button>
+                                            <?php
+                                        }
+                                    }else{
                                         ?>
-                                            <button id='update_ep' name='update_ep' class='btn btn-large btn-danger' type="submit">UPDATE</button>
+                                            <button id='publish_ep' name='publish_ep' class='btn btn-large btn-danger' type="submit">PUBLISH</button>
                                         <?php
                                     }
-                                }else{
-                                    ?>
-                                        <button id='publish_ep' name='publish_ep' class='btn btn-large btn-danger' type="submit">PUBLISH</button>
-                                    <?php
-                                }
-                            ?>
-                        </div>
+                                ?>
+                            </div>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
         </div>
 	</div>
 </div>

@@ -10,7 +10,7 @@ if(isset($_COOKIE['creator_username'])){
 		<div class="row justify-content-start">
             <!--REGISTER  -->
             <?php if (!isset($_GET['login'])){ ?>
-                <div class="col-md-8 p-5 text-center">
+                <div class="col-md-6 p-5 text-center">
                     <div class="card" style="width: 25rem;">
                         <h4>CREATOR REGISTER</h4>
                         <form action="" method="POST">
@@ -67,7 +67,7 @@ if(isset($_COOKIE['creator_username'])){
             
             <!--LOGIN  -->
             <?php if (isset($_GET['login'])){ ?>
-                <div class="col-md-8 p-5 text-center">
+                <div class="col-md-6 p-5 text-center">
                     <div class="card" style="width: 25rem;">
                         <h4>CREATOR LOGIN</h4>
                         <form action="" method="POST">
@@ -93,7 +93,69 @@ if(isset($_COOKIE['creator_username'])){
                     </div>
                 </div>
             <?php } ?>
+            
+            <div class="col-md-6" style='align-self: center;'>
+                <h3 class='home-text'>Memberships Subscription</h3>
+                <div class="row justify-content-around">
+                    <div class="col pb-4">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Silver Membership</h5>
+                                <p class="card-text">
+                                    <ul>
+                                        <li>Limit 40 Tracks</li>
+                                        <li>Few Ads</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="col pb-4">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Gold Membership</h5>
+                                <p class="card-text">
+                                    <ul>
+                                        <li>Limit 80 Tracks</li>
+                                        <li>Ads Free</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col pb-4">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Classic Membership</h5>
+                                <p class="card-text">
+                                    <ul>
+                                        <li>Limit 20 Tracks</li>
+                                        <li>Few Ads</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col pb-4">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Premuim Membership</h5>
+                                <p class="card-text">
+                                    <ul>
+                                        <li>Unlimited Tracks</li>
+                                        <li>Ads Free</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
 		</div>
 	</div>
 <?php require('./components/footer.php'); ?>
