@@ -11,7 +11,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
 			<li class="nav-item">
-				<a class="nav-link <?php $_GET['page_state'] == 'add-episode' ? print 'active' : '' ;?>" aria-current="page" href="./index.php?page_state=add-episode">ADD EPISODE</a>
+				<a class="nav-link <?php $_GET['page_state'] == 'add-episode' ? print 'active' : '' ;?>" aria-current="page" href="./index.php?page_state=add-episode"><?php isset($_GET['action']) == 'update_track' ? print("UPDATE EPISODE") : print("ADD EPISODE") ?></a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link <?php $_GET['page_state'] == 'tracks' ? print 'active' : '' ;?>" href="./tracks.php?page_state=tracks">TRACKS</a>

@@ -27,10 +27,10 @@
 				<a class="nav-link <?php $page_state == 'About' ? print 'active' : '' ;?>" href="./about.php?page_state=About">ABOUT</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link <?php $page_state == 'Upload' ? print 'active' : '' ;?>" href="./logincreator.php?page_state=Upload"><?php !$username ?  print("UPLOAD") : print("CREATOR"); ?></a>
+				<a class="nav-link <?php $page_state == 'Upload' ? print 'active' : '' ;?>" href="./logincreator.php?page_state=Upload"><?php !$username ?  print("UPLOAD") : print("ARTIST"); ?></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link <?php $page_state == 'Listen' ? print 'active' : '' ;?>" href="./login.php?page_state=Listen">LISTEN NOW</a>
+				<a class="nav-link <?php $page_state == 'Listen' ? print 'active' : '' ;?>" href="./listen.php?page_state=Listen">LISTEN NOW</a>
 			</li>
 		</ul>
 		</div>

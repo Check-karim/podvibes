@@ -16,19 +16,40 @@ if(isset($_COOKIE['creator_username'])){
                         <form action="" method="POST">
                             <!-- username -->
                             <ul id="msg_error_register_creator"></ul>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">@</span>
-                                <input type="text" id='creator_username' name='username' class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+
+                            <div class="mb-3">
+                                <div class="form-floating mb-3">
+                                    <input type="text" name='username' class="form-control color-red" id="creator_username" placeholder="username">
+                                    <label for="creator_username">Username</label>
+                                </div>
                             </div>
+
                             <!-- email -->
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">@</span>
-                                <input type="email" id='creator_email' name='email' class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+                            <div class="mb-3">
+                                <div class="form-floating mb-3">
+                                    <input type="email" name='email' class="form-control color-red" id="creator_email" placeholder="username">
+                                    <label for="creator_email">Email</label>
+                                </div>
+                            </div>
+
+                            <!-- membership -->
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <select class="form-select" name='membership' id="ep_membership" aria-label="Floating label select example">
+                                        <option value="Silver">Silver</option>
+                                        <option value="Gold">Gold</option>
+                                        <option value="Classic">Classic</option>
+                                        <option value="Premium">Premium</option>
+                                    </select>
+                                    <label class='danger' for="ep_membership">Memberships</label>
+                                </div>  
                             </div>
                             <!-- password -->
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">@</span>
-                                <input type="password" id='creator_password' name='password' class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                            <div class="mb-3">
+                                <div class="form-floating mb-3">
+                                    <input type="password" name='password' class="form-control color-red" id="creator_password" placeholder="Password">
+                                    <label for="creator_password">Password</label>
+                                </div>
                             </div>
 
                             <div class="card-body">

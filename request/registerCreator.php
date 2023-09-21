@@ -9,6 +9,7 @@ $messages = array();
 $username = isset($_POST['username']) ? $_POST['username'] : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
 $email = isset($_POST['email']) ? $_POST['email'] : '';
+$membership = isset($_POST['membership']) ? $_POST['membership'] : '';
 
 
 $sql_e = "SELECT ID FROM creator WHERE USERNAME='$username'";
@@ -17,7 +18,7 @@ $res_u = mysqli_query($conn, $sql_e);
 $sql_e1 = "SELECT ID FROM creator ";
 $res_u1 = mysqli_query($conn, $sql_e1);
 
-if (empty($username) || empty($password) || empty($email)) {
+if (empty($username) || empty($password) || empty($email) || empty($membership) ) {
     # code...
     $ok = false;
     $messages[] = "INPUT FIELDS CANT BE EMPTY";
@@ -26,7 +27,7 @@ if (empty($username) || empty($password) || empty($email)) {
     $messages[] = "Username already exist";
 }
 else {
-    $query ="INSERT INTO `creator` ( `USERNAME`, `PASSWORD`,`EMAIL`) VALUES('" . $username . "','" . $password . "','" . $email . "') ";
+    $query ="INSERT INTO `creator` ( `USERNAME`, `PASSWORD`,`EMAIL`,`MEMBERSHIP`) VALUES('" . $username . "','" . $password . "','" . $email . "','" . $membership . "') ";
     $sqlcreate_user = $conn->query($query);
 
     if ($sqlcreate_user) {

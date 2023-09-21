@@ -18,8 +18,8 @@
 /* Home */
 .home-container{
     background-image: url('../images/EA2D09C2-5A51-46A2-876D-8B46E59C0B62.jpg');
-    background-size: cover;
-    height: 87vh;
+    background-size: auto;
+    height: 100vh;
     background-position-x: center;
     background-position-y: center;
 }
@@ -35,4 +35,13 @@
     letter-spacing: 0.1cm;
     word-spacing: 25px;
     text-shadow: -5px 5px 7px red;
+}
+
+.table-color-white{
+    color: white !important;
+}
+
+.div-block{
+    background-color: #212529;
+    color: white;
 }

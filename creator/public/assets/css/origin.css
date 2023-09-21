@@ -18,8 +18,8 @@
 /* Home */
 .home-container{
     background-image: url('../images/EA2D09C2-5A51-46A2-876D-8B46E59C0B62.jpg');
-    background-size: cover;
-    height: 87vh;
+    background-size: auto;
+    height: 100vh;
     background-position-x: center;
     background-position-y: center;
 }
