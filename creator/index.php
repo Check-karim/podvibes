@@ -93,7 +93,7 @@
             move_uploaded_file($tname_track, $root_dir.'/'.$upload_dir_track."/".$ep_track);
        
         $sql = "INSERT INTO episode (USER,TITLE,COVER,TRACK) ";
-        $sql .= "VALUES('".$username."','".$ep_title."','".$ep_description."','".$ep_membership."','".$ep_cover."','".$ep_track."' ) ";
+        $sql .= "VALUES('".$username."','".$ep_title."','".$ep_cover."','".$ep_track."' ) ";
         
         $result = mysqli_query($conn, $sql);
 

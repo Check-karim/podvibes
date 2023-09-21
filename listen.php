@@ -13,7 +13,7 @@ require ('./components/header.php'); ?>
                 <div id="plwrap">
                     <!-- <ul id="plList"></ul> -->
                     <!-- <table class='myTable table table-striped table-color-white'> -->
-                    <table id='play_m' class='myTable_player pt-5 table table-striped table-color-white'>
+                    <table id='play_m' class='myTable_player table table-striped table-color-white'>
                         <thead>
                             <tr>
                                 <th>Cover</th>
@@ -44,7 +44,7 @@ require ('./components/header.php'); ?>
                 </div>
 
 
-                <div class="row justify-content-around pb-5">
+                <div class="row justify-content-around">
                     <div class="col-md-12">
                         <div id="nowPlay">
                             <span id="npAction">Paused...</span><span id="npTitle"></span>
@@ -178,9 +178,9 @@ require ('./components/header.php'); ?>
             li = $('#play_m tr').on('click', function () {
                 var id = parseInt($(this).index());
                 // console.log(id + ' ' + index);
-                if (id !== index) {
+                // if (id !== index) {
                     playTrack(id);
-                }
+                // }
             }),
             loadTrack = function (id) {
                 $('.plSel').removeClass('plSel');

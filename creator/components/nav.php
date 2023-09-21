@@ -16,9 +16,9 @@
 			<li class="nav-item">
 				<a class="nav-link <?php $_GET['page_state'] == 'tracks' ? print 'active' : '' ;?>" href="./tracks.php?page_state=tracks">TRACKS</a>
 			</li>
-			<!-- <li class="nav-item">
-				<a class="nav-link <?php $_GET['page_state'] == 'Upload' ? print 'active' : '' ;?>"" href="./logincreator.php?page_state=Upload">UPLOAD</a>
-			</li> -->
+			<li class="nav-item">
+				<a class="nav-link <?php $_GET['page_state'] == 'account' ? print 'active' : '' ;?>"" href="./account.php?page_state=account">ACCOUNT</a>
+			</li>
 			<!-- <li class="nav-item">
 				<a class="nav-link <?php $_GET['page_state'] == 'Login' ? print 'active' : '' ;?>"" href="./login.php?page_state=Login">FOR YOU</a>
 			</li> -->

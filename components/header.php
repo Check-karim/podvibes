@@ -21,4 +21,4 @@
 </head>
 
 <!-- <body bgcolor="black" style="background-image: url(./public/assets/images/EA2D09C2-5A51-46A2-876D-8B46E59C0B62.jpg);"> -->
-<body>
+<body  <?php isset($body) ? print('class="'.$body.'"') : print('') ?> >

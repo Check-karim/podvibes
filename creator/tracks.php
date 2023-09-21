@@ -4,6 +4,22 @@ require ('./components/header.php'); ?>
 <?php require ('./components/nav.php') ?>
 <?php require ('./DB/db.php');
     $username = $_COOKIE['creator_username'];
+
+    if(isset($_GET['action'])){
+        if($_GET['action'] == 'del'){
+            $track_id = $_GET['track_id'];
+            $query1 ="DELETE FROM episode WHERE ID='".$track_id."' ";
+            $sqlDelTrack = $conn->query($query1);
+            if ($sqlDelTrack) {
+                echo '<script>alert("Track Deleted Successfully")</script>';
+                echo '<script>
+                    
+                </script>';
+            }else{
+                echo '<script>alert("ERROR '.$conn->error.'")</script>';
+            }
+        }
+    }
 ?>
 <link rel="stylesheet" href="./public/assets/css/track.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.css" integrity="sha512-yexU9hwne3MaLL2PG+YJDhaySS9NWcj6z7MvUDSoMhwNghPgXgcvYgVhfj4FMYpPh1Of7bt8/RK5A0rQ9fPMOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,8 +36,6 @@ require ('./components/header.php'); ?>
                             <tr>
                                 <th>Cover</th>
                                 <th>Title</th>
-                                <!-- <th>Description</th>
-                                <th>Membership</th> -->
                                 <th>DELETE</th>
                                 <th>UPDATE</th>
                                 <th>PLAY</th>
@@ -42,7 +56,7 @@ require ('./components/header.php'); ?>
                                     <td><?php print($row_getEP['TITLE']) ?></td>
                                     <!-- <td><?php print($row_getEP['DESCRIPTION']) ?></td>
                                     <td><?php print($row_getEP['MEMBERSHIP']) ?></td> -->
-                                    <td><a style='color: white;' href='#' class="btn btn-danger btn-small">DELETE</a></td>
+                                    <td><a style='color: white;' href='./tracks.php?page_state=tracks&action=del&track_id=<?php print($row_getEP['ID']) ?>' class="btn btn-danger btn-small">DELETE</a></td>
                                     <td><a style='color: white;' href='./index.php?page_state=add-episode&id=<?php echo $row_getEP['ID'] ?>&action=update_episode' class="btn btn-warning btn-small">UPDATE</a></td>
                                     <td><button class="btn btn-secondary btn-small">PLAY</button></td>
                                 </tr>
@@ -186,9 +200,9 @@ require ('./components/header.php'); ?>
             li = $('#play_m tr').on('click', function () {
                 var id = parseInt($(this).index());
                 // console.log(id + ' ' + index);
-                if (id !== index) {
+                // if (id !== index) {
                     playTrack(id);
-                }
+                // }
             }),
             loadTrack = function (id) {
                 $('.plSel').removeClass('plSel');

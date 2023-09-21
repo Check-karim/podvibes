@@ -25,4 +25,5 @@
 <script src='./js/logout.js'></script>
 <script src='./js/publish_episode.js'></script>
 <script src='./js/upload_cover.js'></script>
+<script src='./js/update_info.js'></script>
 </html>
