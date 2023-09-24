@@ -21,6 +21,8 @@
 </script>
 
 <script src="./js/logincreator.js"></script>
+<script src="./js/loginadmin.js"></script>
 <script src="./js/registercreator.js"></script>
+<script src="./js/logoutadmin.js"></script>
 
 </html>

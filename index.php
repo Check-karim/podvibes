@@ -1,4 +1,8 @@
-<?php require('./components/header.php'); ?>
+<?php
+if(!isset($_GET['page_state'])){
+	header("Location: ./index.php?page_state=home");
+}
+require('./components/header.php'); ?>
 <?php require_once('./components/nav.php'); ?>
 	<div class="container-fluid home-container">
 		<div class="row justify-content-end">

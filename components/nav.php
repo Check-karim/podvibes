@@ -21,7 +21,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
 			<li class="nav-item">
-				<a class="nav-link <?php $page_state == '' ? print 'active' : '' ;?>" aria-current="page" href="./">HOME</a>
+				<a class="nav-link <?php $page_state == 'home' ? print 'active' : '' ;?>" aria-current="page" href="./">HOME</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link <?php $page_state == 'About' ? print 'active' : '' ;?>" href="./about.php?page_state=About">ABOUT</a>
@@ -34,6 +34,27 @@
 			</li>
 		</ul>
 		</div>
+
+		<?php 
+			if(!isset($_COOKIE['creator_username'])){
+		?>
+		<form class="d-flex">
+
+			<a style='color: white;' href='<?php isset($_COOKIE['admin_username']) ? print './admin.php?page_state=dashboard' : print './admin.php?page_state=admin' ?>' 
+			class="btn btn-small btn-danger" 
+			id='<?php isset($_COOKIE['admin_username']) && $_GET['page_state'] == 'dashboard' ? print 'btn-logout-admin' : print 'btn-login-admin' ?>'
+			type="submit"><?php if(isset($_COOKIE['admin_username'])){ 
+				if($_GET['page_state'] == 'dashboard'){
+					print('Logout');
+				}else{
+					print('Dashboard');
+				}
+			}else{ 
+				print('Admin') ;
+			} ?> </a>
+      	
+		</form>
+		<?php } ?>
 	</div>
 </nav>
 <!-------------navigation---------->
