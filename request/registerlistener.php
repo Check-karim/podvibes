@@ -14,7 +14,7 @@ $email = isset($_POST['email']) ? $_POST['email'] : '';
 $sql_e = "SELECT ID FROM listener WHERE USERNAME='$username'";
 $res_u = mysqli_query($conn, $sql_e);
 
-$sql_e1 = "SELECT ID FROM listeber ";
+$sql_e1 = "SELECT ID FROM listener ";
 $res_u1 = mysqli_query($conn, $sql_e1);
 
 if (empty($username) || empty($password) || empty($email)) {
