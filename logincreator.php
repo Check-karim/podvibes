@@ -1,4 +1,6 @@
-<?php require('./components/header.php'); ?>
+<?php 
+$body= 'div-block';
+require('./components/header.php'); ?>
 <?php require_once('./components/nav.php'); ?>
 <?php include_once('./DB/db.php');?>
 <?php 
@@ -10,7 +12,7 @@ if(isset($_COOKIE['creator_username'])){
 		<div class="row justify-content-start">
             <!--REGISTER  -->
             <?php if (!isset($_GET['login'])){ ?>
-                <div class="col-md-6 p-5 text-center">
+                <div class="col-md-6 p-5 text-center" style='color: black;'>
                     <div class="card" style="width: 25rem;">
                         <h4>CREATOR REGISTER</h4>
                         <form action="" method="POST">
@@ -56,7 +58,7 @@ if(isset($_COOKIE['creator_username'])){
             <!--LOGIN  -->
             <?php if (isset($_GET['login'])){ ?>
                 <div class="col-md-6 p-5 text-center">
-                    <div class="card" style="width: 25rem;">
+                    <div class="card" style="width: 25rem; color:black;">
                         <h4>CREATOR LOGIN</h4>
                         <form action="" method="POST">
                             <!-- username -->

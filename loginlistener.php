@@ -1,4 +1,6 @@
-<?php require('./components/header.php'); ?>
+<?php 
+$body= 'div-block';
+require('./components/header.php'); ?>
 <?php require_once('./components/nav.php'); ?>
 <?php include_once('./DB/db.php');?>
 <?php 
@@ -7,7 +9,7 @@ if(isset($_COOKIE['listener_username'])){
 }
 ?>
 	<div class="container-fluid home-container">
-		<div class="row justify-content-start">
+		<div class="row justify-content-start" style='color: black;'>
             <!--REGISTER  -->
             <?php if (!isset($_GET['login'])){ ?>
                 <div class="col-md-6 p-5 text-center">

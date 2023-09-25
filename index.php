@@ -1,4 +1,5 @@
 <?php
+$body= 'div-block';
 if(!isset($_GET['page_state'])){
 	header("Location: ./index.php?page_state=home");
 }

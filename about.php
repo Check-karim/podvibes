@@ -1,15 +1,17 @@
-<?php require ('./components/header.php') ?>
+<?php 
+$body= 'div-block';
+require ('./components/header.php') ?>
 <?php require ('./components/nav.php') ?>
 <div class="container-fluid home-container">
 	<div class="row justify-content-end">
-		<div class="col-md-8 p-5 text-center">
+		<div class="col-md-8 p-5 pb-2 text-center">
 			<h1 class='p-2  home-text-shadow'>PODVIBES EAR CANDY FOR YOU</h1>
 		</div>
 		<br/>
 		
 	</div>
   <div class="row justify-content-start">
-    <div class="col-md-6 pt-3 home-text">
+    <div class="col-md-6 home-text">
 			<p class='pt-1 fs-2'>
         PODVIBES, THE SHOW THAT EXPLORES THE 
         WORLD OF MUSIC, CULTURE ,AND TECHNOLOGY, 
