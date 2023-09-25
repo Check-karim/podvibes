@@ -3,7 +3,6 @@ var update = {
     btn_del : document.getElementById('del_info_btn'),
     username : document.getElementById('update_username'),
     email : document.getElementById('update_email'),
-    membership : document.getElementById('update_membership'),
     password : document.getElementById('update_password'),
     msg_error : document.getElementById('msg_error_update_creator'),
     id_user : document.getElementById('update_id'),
@@ -47,7 +46,7 @@ $(update.btn).click('click', (event) =>{
         }
     };
     console.log(update.id_user);
-    const requestData1 = `id_user=${update.id_user.value}&membership=${update.membership.value}&email=${update.email.value}&username=${update.username.value}&password=${update.password.value}`;
+    const requestData1 = `id_user=${update.id_user.value}&email=${update.email.value}&username=${update.username.value}&password=${update.password.value}`;
     request1.open('post', './request/updatecreator.php');
     request1.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
 

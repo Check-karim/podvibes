@@ -5,13 +5,11 @@ require ('./components/header.php'); ?>
 <?php require ('./DB/db.php');
     $username = $_COOKIE['creator_username'];
     $email = '';
-    $memebership = '';
     
     $sql = "SELECT * FROM creator WHERE USERNAME='".$username."' ";
     $run_getEP= mysqli_query($conn, $sql);
     while ($row_getEP = mysqli_fetch_assoc($run_getEP)) {
         $email = $row_getEP['EMAIL'];
-        $membership = $row_getEP['MEMBERSHIP'];
     }
 ?>
 
@@ -49,18 +47,6 @@ require ('./components/header.php'); ?>
                                     </div>
                                 </div>
 
-                                <!-- membership -->
-                                <div class="mb-3">
-                                    <div class="form-floating">
-                                        <select class="form-select" name='update_membership' id="update_membership" aria-label="Floating label select example">
-                                            <option value="Silver" <?php isset($membership) && $membership == 'Silver' ? print 'selected' : '' ?> >Silver</option>
-                                            <option value="Gold" <?php isset($membership) && $membership == 'Gold' ? print 'selected' : '' ?> >Gold</option>
-                                            <option value="Classic" <?php isset($membership) && $membership == 'Classic' ? print 'selected' : '' ?> >Classic</option>
-                                            <option value="Premium" <?php isset($membership) && $membership == 'Premium' ? print 'selected' : '' ?> >Premium</option>
-                                        </select>
-                                        <label class='danger' for="update_membership">Memberships</label>
-                                    </div>  
-                                </div>
                                 <!-- password -->
                                 <div class="mb-3">
                                     <div class="form-floating mb-3">

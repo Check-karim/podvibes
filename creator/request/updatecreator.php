@@ -9,7 +9,6 @@ $messages = array();
 $username = isset($_POST['username']) ? $_POST['username'] : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
 $email = isset($_POST['email']) ? $_POST['email'] : '';
-$membership = isset($_POST['membership']) ? $_POST['membership'] : '';
 $id_user = isset($_POST['id_user']) ? $_POST['id_user'] : '';
 
 
@@ -19,7 +18,7 @@ $res_u = mysqli_query($conn, $sql_e);
 $sql_e1 = "SELECT ID FROM creator ";
 $res_u1 = mysqli_query($conn, $sql_e1);
 
-if (empty($username) || empty($email) || empty($membership) || empty($id_user) ) {
+if (empty($username) || empty($email) || empty($id_user) ) {
     # code...
     $ok = false;
     $messages[] = "INPUT FIELDS CANT BE EMPTY";
@@ -32,7 +31,7 @@ else {
     if(!empty($password)){
         $query .= "PASSWORD='" . $password . "',";
     }
-    $query .= " EMAIL='" . $email . "',MEMBERSHIP='" . $membership . "' WHERE  USERNAME='".$id_user."' ";
+    $query .= " EMAIL='" . $email . "' WHERE  USERNAME='".$id_user."' ";
     
     $sqlcreate_user = $conn->query($query);
 
