@@ -47,13 +47,24 @@
 
 			<a style='color: white;' href='<?php isset($_COOKIE['admin_username']) ? print './admin.php?page_state=dashboard' : print './admin.php?page_state=admin' ?>' 
 			class="btn btn-small btn-danger" 
-			id='<?php isset($_COOKIE['admin_username']) && $_GET['page_state'] == 'dashboard' ? print 'btn-logout-admin' : print 'btn-login-admin' ?>'
-			type="submit"><?php if(isset($_COOKIE['admin_username'])){ 
+			id='<?php if(isset($_COOKIE['admin_username']) && !isset($_COOKIE['listener_username'])){
+				if(isset($_COOKIE['admin_username']) && $_GET['page_state'] == 'dashboard') {
+					print 'btn-logout-admin' ;
+				}else{ 
+					print 'btn-login-admin' ;
+				}
+			}elseif(!isset($_COOKIE['admin_username']) && isset($_COOKIE['listener_username'])){
+				print 'btn-logout-listener';
+			}?>'
+			type="submit">
+			<?php if(isset($_COOKIE['admin_username']) && !isset($_COOKIE['listener_username'])){ 
 				if($_GET['page_state'] == 'dashboard'){
 					print('Logout Admin');
 				}else{
 					print('Dashboard Admin');
 				}
+			}elseif(!isset($_COOKIE['admin_username']) && isset($_COOKIE['listener_username'])){
+				print('Logout Listener') ;
 			}else{ 
 				print('Admin') ;
 			} ?> </a>
