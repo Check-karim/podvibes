@@ -23,6 +23,9 @@
 <script src="./js/logincreator.js"></script>
 <script src="./js/loginadmin.js"></script>
 <script src="./js/registercreator.js"></script>
+<script src="./js/loginlistener.js"></script>
+<script src="./js/registerlistener.js"></script>
 <script src="./js/logoutadmin.js"></script>
+<script src="./js/update_listener_info.js"></script>
 
 </html>

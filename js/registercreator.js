@@ -2,7 +2,6 @@ var creator =  {
     // register 
     username : document.getElementById('creator_username'),
     email : document.getElementById('creator_email'),
-    membership : document.getElementById('ep_membership'),
     password : document.getElementById('creator_password'),
     btn : document.getElementById('creator_submit'),
     msg_error : document.getElementById('msg_error_register_creator'),
@@ -47,7 +46,7 @@ $(creator.btn).click('click', (event) => {
         }
     };
 
-    const requestData1 = `username=${creator.username.value}&email=${creator.email.value}&password=${creator.password.value}&membership=${creator.membership.value}`;
+    const requestData1 = `username=${creator.username.value}&email=${creator.email.value}&password=${creator.password.value}`;
     request1.open('post', './request/registerCreator.php');
     request1.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
 

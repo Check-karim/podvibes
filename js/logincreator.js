@@ -40,7 +40,7 @@ $(creator_login.btn).click('click', (event) => {
         }
 
         if (responseObject) {
-            handle_login(responseObject);
+            handle_login_creator(responseObject);
         }
     };
 
@@ -52,7 +52,7 @@ $(creator_login.btn).click('click', (event) => {
 });
 
 // handle request
-function handle_login(res) {
+function handle_login_creator(res) {
     if (res.ok) {
         while (creator_login.msg_error.firstChild) {
 

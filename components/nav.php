@@ -32,6 +32,11 @@
 			<li class="nav-item">
 				<a class="nav-link <?php $page_state == 'Listen' ? print 'active' : '' ;?>" href="./listen.php?page_state=Listen">LISTEN NOW</a>
 			</li>
+			<?php if (isset($_COOKIE['listener_username'])) { ?>
+			<li class="nav-item">
+				<a class="nav-link <?php $page_state == 'My_account' ? print 'active' : '' ;?>" href="./account.php?page_state=My_account">MY ACCOUNT</a>
+			</li>
+			<?php } ?>
 		</ul>
 		</div>
 
@@ -45,9 +50,9 @@
 			id='<?php isset($_COOKIE['admin_username']) && $_GET['page_state'] == 'dashboard' ? print 'btn-logout-admin' : print 'btn-login-admin' ?>'
 			type="submit"><?php if(isset($_COOKIE['admin_username'])){ 
 				if($_GET['page_state'] == 'dashboard'){
-					print('Logout');
+					print('Logout Admin');
 				}else{
-					print('Dashboard');
+					print('Dashboard Admin');
 				}
 			}else{ 
 				print('Admin') ;

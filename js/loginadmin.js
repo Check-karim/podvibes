@@ -39,7 +39,7 @@ $(admin.btn).click('click', (event) =>{
         }
 
         if (responseObject) {
-            handle_login(responseObject);
+            handle_login_admin(responseObject);
         }
     };
 
@@ -51,7 +51,7 @@ $(admin.btn).click('click', (event) =>{
 });
 
 // handle request
-function handle_login(res) {
+function handle_login_admin(res) {
     if (res.ok) {
         while (admin.msg_error.firstChild) {
 

@@ -32,18 +32,6 @@ if(isset($_COOKIE['creator_username'])){
                                 </div>
                             </div>
 
-                            <!-- membership -->
-                            <div class="mb-3">
-                                <div class="form-floating">
-                                    <select class="form-select" name='membership' id="ep_membership" aria-label="Floating label select example">
-                                        <option value="Silver">Silver</option>
-                                        <option value="Gold">Gold</option>
-                                        <option value="Classic">Classic</option>
-                                        <option value="Premium">Premium</option>
-                                    </select>
-                                    <label class='danger' for="ep_membership">Memberships</label>
-                                </div>  
-                            </div>
                             <!-- password -->
                             <div class="mb-3">
                                 <div class="form-floating mb-3">
@@ -94,67 +82,6 @@ if(isset($_COOKIE['creator_username'])){
                 </div>
             <?php } ?>
             
-            <div class="col-md-6" style='align-self: center;'>
-                <h3 class='home-text'>Memberships Subscription</h3>
-                <div class="row justify-content-around">
-                    <div class="col pb-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Silver Membership</h5>
-                                <p class="card-text">
-                                    <ul>
-                                        <li>Limit 40 Tracks</li>
-                                        <li>Few Ads</li>
-                                    </ul>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col pb-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Gold Membership</h5>
-                                <p class="card-text">
-                                    <ul>
-                                        <li>Limit 80 Tracks</li>
-                                        <li>Ads Free</li>
-                                    </ul>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col pb-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Classic Membership</h5>
-                                <p class="card-text">
-                                    <ul>
-                                        <li>Limit 20 Tracks</li>
-                                        <li>Few Ads</li>
-                                    </ul>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col pb-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">Premuim Membership</h5>
-                                <p class="card-text">
-                                    <ul>
-                                        <li>Unlimited Tracks</li>
-                                        <li>Ads Free</li>
-                                    </ul>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             
 		</div>
 	</div>

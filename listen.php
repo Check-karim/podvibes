@@ -3,6 +3,12 @@ $body= 'div-block';
 require ('./components/header.php'); ?>
 <?php require ('./components/nav.php') ?>
 <?php require ('./DB/db.php');?>
+<?php 
+if(!isset($_COOKIE['listener_username'])){
+    header("Location: ./loginlistener.php?page_state=Listen");
+}
+?>
+
 <link rel="stylesheet" href="./creator/public/assets/css/track.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.css" integrity="sha512-yexU9hwne3MaLL2PG+YJDhaySS9NWcj6z7MvUDSoMhwNghPgXgcvYgVhfj4FMYpPh1Of7bt8/RK5A0rQ9fPMOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
