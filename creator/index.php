@@ -40,23 +40,39 @@ require ('./components/header.php'); ?>
 
             $root_dir = __DIR__;
 
-                // for cover
-                move_uploaded_file($tname_cover, $root_dir.'/'.$upload_dir_cover."/".$ep_cover);
-                // for track
-                move_uploaded_file($tname_track, $root_dir.'/'.$upload_dir_track."/".$ep_track);
-        
-            $sql = "INSERT INTO episode (USER,TITLE,COVER,TRACK) ";
-            $sql .= "VALUES('".$username."','".$ep_title."','".$ep_cover."','".$ep_track."' ) ";
+            // for cover
+            move_uploaded_file($tname_cover, $root_dir.'/'.$upload_dir_cover."/".$ep_cover);
+            // for track
+            move_uploaded_file($tname_track, $root_dir.'/'.$upload_dir_track."/".$ep_track);
             
-            $result = mysqli_query($conn, $sql);
+            $sql_count = "SELECT COUNT(track) as count FROM `episode` where USER='".$username."' ";
+            $run_count = mysqli_query($conn , $sql_count);
+            $row_count = mysqli_fetch_assoc($run_count);
 
-            if($result){
-                $success =  'Episode Uploaded';
-                // echo 'Uploaded';
+            if( $row_count['count'] < '5'){
+                $sql = "INSERT INTO episode (USER,TITLE,COVER,TRACK) ";
+                $sql .= "VALUES('".$username."','".$ep_title."','".$ep_cover."','".$ep_track."' ) ";
+                
+                $result = mysqli_query($conn, $sql);
+
+                if($result){
+                    $success =  'Episode Uploaded';
+                    // header('Location : ./index.php?page_state=add-episode');
+                    // echo 'Uploaded';
+                }else{
+                    $error = 'Episode Not Uploaded '.$conn->error;
+                    // echo 'Not Uploaded '.$conn->error;
+                }
             }else{
-                $error = 'Episode Not Uploaded '.$conn->error;
+                $error = 'Episode To Upload have exceeded 
+                <a href="../contact-us.php?page_state=CONTACT-US" 
+                style="background-color: #dc3545; color:white;" class="btn btn-small btn-dnager">
+                    CONTACT ADMIN
+                </a> To Upgrade ACCOUNT
+                ';
                 // echo 'Not Uploaded '.$conn->error;
             }
+            
         }else{
             $error = 'Episode Not uploaded Empty Fields';
             // echo 'Not uploaded Empty Fields';
@@ -149,6 +165,7 @@ require ('./components/header.php'); ?>
                                         if($_GET['action'] == 'update_episode'){
                                             ?>
                                                 <button id='update_ep' name='update_ep' class='btn btn-large btn-danger' type="submit">UPDATE</button>
+                                                <a href='./index.php?page_state=add-episode' name='' class='btn btn-large btn-primary'>CANCEL</a>
                                             <?php
                                         }
                                     }else{

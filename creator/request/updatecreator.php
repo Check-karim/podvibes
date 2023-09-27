@@ -32,12 +32,18 @@ else {
         $query .= "PASSWORD='" . $password . "',";
     }
     $query .= " EMAIL='" . $email . "' WHERE  USERNAME='".$id_user."' ";
-    
-    $sqlcreate_user = $conn->query($query);
 
-    if ($sqlcreate_user) {
+    $sql = "UPDATE `episode` SET USER='".$username."' WHERE USER='".$id_user."' ";
+    
+    $sqlupdate_user = $conn->query($query);
+    $sqlupdate_user_track = $conn->query($sql);
+
+    if ($sqlupdate_user) {
         $ok = true;
         $messages[] = "Success on Updating creator account";
+
+        setcookie("creator_username", $username, time() + 30 * 24 * 60 * 60, "/");
+        $_SESSION['creator_username'] = $username;
     
     } else {
         $ok = false;

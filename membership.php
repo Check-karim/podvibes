@@ -2,7 +2,6 @@
 $body= 'div-block';
 require ('./components/header.php'); ?>
 <?php require ('./components/nav.php') ?>
-<?php require ('./DB/db.php');?>
 
 <div class='div-block'>
     <div class="container">

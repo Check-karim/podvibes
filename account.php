@@ -24,7 +24,7 @@ require ('./components/header.php'); ?>
                 <div class="row justify-content-around" >
                     <div class="col-md-8 p-5 text-center justify-content-center">
                         <div class="card" style='color: black;'>
-                            <h4 >UPDATE ACCOUNT INFORMATION</h4>
+                            <h4 >UPDATE LISTENER ACCOUNT INFORMATION</h4>
                             <form action="" method="POST">
                                 <!-- username -->
                                 <ul id="msg_error_update_listener"></ul>

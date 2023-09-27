@@ -6,6 +6,8 @@ require ('./components/header.php'); ?>
 <?php 
 if(!isset($_COOKIE['listener_username'])){
     header("Location: ./loginlistener.php?page_state=Listen");
+}else{
+    $username = $_COOKIE['listener_username'];
 }
 ?>
 
@@ -30,8 +32,17 @@ if(!isset($_COOKIE['listener_username'])){
                         </thead>
                         <tbody id=''>
                             <?php
+
+                                $sql_count = "SELECT * FROM `listener` WHERE USERNAME='".$username."' ";
+                                $run_count = mysqli_query($conn , $sql_count);
+                                $row_count = mysqli_fetch_assoc($run_count);
+
                                 $i = 0;
-                                $sql_getEP = "SELECT * FROM episode ";
+                                if($row_count['MEMBERSHIP'] == '0'){
+                                    $sql_getEP = "SELECT * FROM episode ORDER BY RAND() LIMIT 2";
+                                }else{
+                                    $sql_getEP = "SELECT * FROM episode ORDER BY RAND()";
+                                }
                                 $run_getEP= mysqli_query($conn, $sql_getEP);
                                 while ($row_getEP = mysqli_fetch_assoc($run_getEP)) {
                                     // if(!empty($row_getEP['COVER']) || !empty($row_getEP['TRACK'])){
@@ -68,6 +79,20 @@ if(!isset($_COOKIE['listener_username'])){
                 
             </div>
         </div>
+
+            <?php 
+                if($row_count['MEMBERSHIP'] == '0'){
+            ?>
+                <div class="row pb-5 justify-content-around">
+                    <div class='col-md-8 text-center' style='display: flex; justify-content: space-between;'>
+                        <p class='pr-3'>TO VIEW ALL EPISODE CONTACT ADMIN TO UPGRADE YOUR ACCOUNT</p>
+                        <a href="./contact-us.php?page_state=CONTACT-US" 
+                        style='background-color: #dc3545; color:white;' class='btn btn-small btn-dnager'>
+                            CONTACT ADMIN
+                        </a>
+                    </div>
+                </div>
+            <?php } ?>
     </div>
 </div>
 

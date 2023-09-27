@@ -121,9 +121,7 @@ function handle_update(res) {
             });
         // location.reload();
         setTimeout(function () {
-            document.cookie = "creator_username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
-            sessionStorage.removeItem('creator_username');
-            location.href = "../index.php";
+            location.href = "./index.php?page_state=add-episode";
         }, 1500);
 
     } else {
