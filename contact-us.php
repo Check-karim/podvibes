@@ -1,7 +1,14 @@
 <?php 
 $body= 'div-block';
 require ('./components/header.php') ?>
-<?php 
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require './phpMailer/src/Exception.php';
+require './phpMailer/src/PHPMailer.php';
+require './phpMailer/src/SMTP.php';
+
  if(isset($_POST['send_contact'])){
     $email = $_POST['contact_email'];
     $name = $_POST['contact_name'];
@@ -9,10 +16,39 @@ require ('./components/header.php') ?>
 
 
     $to = '257kaso@gmail.com';
-
     $subject = 'SUPPORT';
-
     $message = 'This email is from "'.$email.'" MESSAGE [ '.$msg.' ]';
+
+    $mail = new PHPMailer(true);
+    try{
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        
+        $mail->Username = $to;
+        $mail->Password = 'mvcu nzby oxxr tebw';
+
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+
+        $mail->setFrom($email);
+        $mail->addAddress($to);
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = $message;
+
+        $mail->send();
+
+        echo '
+        <script>
+            alert("Sent Successfully");
+            document.location.href = "./contact-us.php?page_state=CONTACT-US";
+        </script>
+        ';
+    }catch(Exception $e){
+        echo "Something went wrong :( <br>";
+        echo $e;
+    }
     
  }
 
